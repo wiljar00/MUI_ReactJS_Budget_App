@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+body {
+  background-color: lightseagreen;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.income-expense-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: turquoise;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.item {
+  margin: 0 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.expense-card {
+  background-color: #ffffff;
+  height: auto;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.expense-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 300px;
+  margin: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.expense-input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.expense-button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
 }
