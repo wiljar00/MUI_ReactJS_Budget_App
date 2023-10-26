@@ -61,3 +61,22 @@ body {
   background-color: #ffffff;
   /* Add any specific styling for the content of each expense entry here */
 }
+
+.item h2 {
+  animation: fadeInAnimation 2s ease-in-out; /* Apply the animation */
+}
+
+.animate {
+  animation: fadeInAnimation 2s ease-in-out;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
