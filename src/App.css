@@ -17,12 +17,12 @@ body {
 }
 
 .expense-card {
-  background-color: #ffffff;
-  height: auto;
+  max-height: 300px; /* Set a fixed height for the container */
+  overflow-y: auto; /* Enable vertical scrolling */
   padding: 20px;
   margin: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  scroll-behavior: smooth;
 }
 
 .expense-form {
@@ -47,4 +47,17 @@ body {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
+}
+
+.expense-entry {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.expense-entry-content {
+  background-color: #ffffff;
+  /* Add any specific styling for the content of each expense entry here */
 }

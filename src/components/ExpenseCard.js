@@ -1,18 +1,27 @@
-import React from 'react';
+// src/components/ExpenseCard.js
+import React, { useRef, useEffect } from 'react';
 
 const ExpenseCard = ({ expenses }) => {
-    return (
-      <div>
-        <h2>Expenses: </h2>
+  const expenseListRef = useRef(null);
 
-        {expenses.map((expense) => (
-          <div key={expense.id} className="expense-card">
+  useEffect(() => {
+    if (expenseListRef.current) {
+      expenseListRef.current.scrollTop = expenseListRef.current.scrollHeight;
+    }
+  }, [expenses]);
+
+  return (
+    <div className="expense-card" ref={expenseListRef}>
+      {expenses.map((expense) => (
+        <div key={expense.id} className="expense-entry">
+          <div className="expense-entry-content">
             <h3>{expense.title}</h3>
             <p>Amount: ${expense.amount}</p>
           </div>
-        ))}
-      </div>
-    );
-  };
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default ExpenseCard;
