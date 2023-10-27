@@ -1,5 +1,5 @@
 // src/components/ExpenseCard.js
-import React, { useRef, useEffect, useMemo } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const ExpenseCard = ({ expenses, incomes }) => {
   const expenseListRef = useRef(null);
@@ -14,7 +14,6 @@ const ExpenseCard = ({ expenses, incomes }) => {
     }
   }, [expenses, incomes]);
 
-  //className={`expense-entry ${item.type}`}
   return (
     <div className="expense-card">
       <div className="income-list" ref={incomeListRef}>

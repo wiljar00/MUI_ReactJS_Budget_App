@@ -4,6 +4,7 @@ import IncomeExpense from './components/IncomeExpense';
 import ExpenseCard from './components/ExpenseCard';
 import ExpenseForm from './components/ExpenseForm';
 import IncomeForm from './components/IncomeForm';
+import Navbar from './components/Navbar';
 
 const App = () => {
   // Dummy data for expenses
@@ -32,7 +33,7 @@ const App = () => {
 
   return (
     <div>
-      <h1 > Budget App </h1>
+      <Navbar />
       <IncomeExpense expenses={expenses} incomes={incomes} /> 
       <div className='forms'>
         <IncomeForm onAddIncome={addIncomeHandler} />
