@@ -16,13 +16,40 @@ body {
   margin: 0 10px;
 }
 
+.forms {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .expense-card {
-  max-height: 300px; /* Set a fixed height for the container */
-  overflow-y: auto; /* Enable vertical scrolling */
-  padding: 20px;
-  margin: 10px;
+  display: flex;
+  justify-content: space-between;
   border-radius: 5px;
-  scroll-behavior: smooth;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.income-list,
+.expense-list {
+  width: 45%; /* Adjust the width as needed */
+  height: 200px; /* Set a fixed height for the scrollable sections */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border-radius: 5px; /* Add border radius for a rounded appearance */
+  padding: 10px; /* Add padding for the scrollable sections */
+  margin-bottom: 20px; /* Adjust the margin-bottom as needed */
+}
+
+.income-entry {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.expense-entry {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .expense-form {
@@ -50,7 +77,15 @@ body {
 }
 
 .expense-entry {
-  background-color: #ffffff;
+  background-color: lightcoral;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.income-entry {
+  background-color: lightblue;
   padding: 20px;
   margin: 10px;
   border-radius: 5px;
@@ -58,7 +93,7 @@ body {
 }
 
 .expense-entry-content {
-  background-color: #ffffff;
+  background-color: lightcoral;
   /* Add any specific styling for the content of each expense entry here */
 }
 
@@ -68,6 +103,14 @@ body {
 
 .animate {
   animation: fadeInAnimation 2s ease-in-out;
+}
+
+.expense {
+  background-color: lightcoral; /* Set a light red background for expenses */
+}
+
+.income {
+  background-color: lightblue; /* Set a light green background for incomes */
 }
 
 @keyframes fadeInAnimation {

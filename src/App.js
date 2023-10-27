@@ -3,6 +3,7 @@ import './App.css';
 import IncomeExpense from './components/IncomeExpense';
 import ExpenseCard from './components/ExpenseCard';
 import ExpenseForm from './components/ExpenseForm';
+import IncomeForm from './components/IncomeForm';
 
 const App = () => {
   // Dummy data for expenses
@@ -19,13 +20,25 @@ const App = () => {
     });
   };
 
+  const [incomes, setIncomes] = useState([
+    { id: 1, title: 'Paycheck', amount: 150.0 },
+  ]);
+
+  const addIncomeHandler = (income) => {
+    setIncomes((prevIncomes) => {
+      return [...prevIncomes, income];
+    });
+  };
+
   return (
     <div>
-      <h1> Budget App </h1>
-      <IncomeExpense expenses={expenses} /> 
-      <h3>Enter your next expense: </h3>
-      <ExpenseForm onAddExpense={addExpenseHandler} />
-      <ExpenseCard expenses={expenses} />
+      <h1 > Budget App </h1>
+      <IncomeExpense expenses={expenses} incomes={incomes} /> 
+      <div className='forms'>
+        <IncomeForm onAddIncome={addIncomeHandler} />
+        <ExpenseForm onAddExpense={addExpenseHandler} />
+      </div>
+      <ExpenseCard expenses={expenses} incomes={incomes}  />
     </div>
   );
 };

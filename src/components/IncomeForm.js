@@ -1,30 +1,29 @@
-// src/components/ExpenseForm.js
+// src/components/IncomeForm.js
 import React, { useState } from 'react';
 
-const ExpenseForm = ({ onAddExpense }) => {
+const IncomeForm = ({ onAddIncome }) => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const expenseData = {
+    const incomeData = {
       id: Math.random().toString(),
       title: title,
       amount: +amount,
     };
-    onAddExpense(expenseData);
+    onAddIncome(incomeData);
     setTitle('');
     setAmount('');
   };
 
   return (
     <form onSubmit={submitHandler} className="expense-form">
-      <h3>Enter your next expense: </h3>
-      {/* Your form elements for adding a new expense */}
+      <h3>Enter your next income: </h3>
       <input
         className="expense-input"
         type="text"
-        placeholder="Expense Name"
+        placeholder="Income Source"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
@@ -36,10 +35,10 @@ const ExpenseForm = ({ onAddExpense }) => {
         onChange={(e) => setAmount(e.target.value)}
       />
       <button type="submit" className="expense-button">
-        Add Expense
+        Add Income
       </button>
     </form>
   );
 };
 
-export default ExpenseForm;
+export default IncomeForm;

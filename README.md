@@ -13,7 +13,7 @@ You may also see any lint errors in the console.
 
 
 ## TODO/Feature List: 
-1. Add logic for the income calculations
+1. ---Add logic for the income calculations--- done
 2. Add a navbar for future pages
 3. Add dates to the expenses
 4. Using the dates added, create a second page for graphs and timelines
