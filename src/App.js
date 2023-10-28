@@ -35,9 +35,15 @@ const App = () => {
     <div>
       <Navbar />
       <IncomeExpense expenses={expenses} incomes={incomes} /> 
-      <div className='forms'>
-        <IncomeForm onAddIncome={addIncomeHandler} />
-        <ExpenseForm onAddExpense={addExpenseHandler} />
+      <div>
+        <div className='forms'>
+          <IncomeForm onAddIncome={addIncomeHandler} />
+          <ExpenseForm onAddExpense={addExpenseHandler} />
+        </div>
+        <div className="entry-headers">
+          <h3>Incomes: </h3>
+          <h3>Expenses: </h3>
+        </div>
       </div>
       <ExpenseCard expenses={expenses} incomes={incomes}  />
     </div>

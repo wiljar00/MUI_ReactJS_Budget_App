@@ -41,12 +41,12 @@ const IncomeExpense = ({ expenses, incomes }) => {
     <div className="income-expense-container">
       <div className="item">
         <h2>
-          Income: $<span ref={totalIncomesRef} className="animate">${totalIncomes.toFixed(2)}</span>
+          Total Income: <span ref={totalIncomesRef} className="animate">${totalIncomes.toFixed(2)}</span>
         </h2>
       </div>
       <div className="item">
         <h2>
-          Expenses: <span ref={totalExpensesRef} className="animate">${totalExpenses.toFixed(2)}</span>
+          Total Expenses: <span ref={totalExpensesRef} className="animate">${totalExpenses.toFixed(2)}</span>
         </h2>
       </div>
     </div>

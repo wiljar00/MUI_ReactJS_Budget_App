@@ -18,6 +18,11 @@ body {
   font-weight: bold; /* Set the font weight for the logo */
 }
 
+.entry-headers {
+  display: flex;
+  justify-content: space-around;
+}
+
 .income-expense-container {
   display: flex;
   justify-content: space-around;
