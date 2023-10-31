@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import IncomeExpense from './components/IncomeExpense';
 import ExpenseCard from './components/ExpenseCard';
 import ExpenseForm from './components/ExpenseForm';
 import IncomeForm from './components/IncomeForm';
 import Navbar from './components/Navbar';
+import GraphsCard from './components/GraphsCard';
 
 const App = () => {
   // Dummy data for expenses
@@ -32,21 +34,35 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Navbar />
-      <IncomeExpense expenses={expenses} incomes={incomes} /> 
-      <div>
-        <div className='forms'>
-          <IncomeForm onAddIncome={addIncomeHandler} />
-          <ExpenseForm onAddExpense={addExpenseHandler} />
-        </div>
-        <div className="entry-headers">
-          <h3>Incomes: </h3>
-          <h3>Expenses: </h3>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="container">
+          <Routes> {/* Use Routes instead of Switch */}
+            <Route path="/hello" element={<GraphsCard />} />
+            <Route
+              path="/budget"
+              element={ /* Render the default component */
+                <div>
+                  <IncomeExpense expenses={expenses} incomes={incomes} /> 
+                  <div>
+                    <div className='forms'>
+                      <IncomeForm onAddIncome={addIncomeHandler} />
+                      <ExpenseForm onAddExpense={addExpenseHandler} />
+                    </div>
+                    <div className="entry-headers">
+                      <h3>Incomes: </h3>
+                      <h3>Expenses: </h3>
+                    </div>
+                  </div>
+                  <ExpenseCard expenses={expenses} incomes={incomes}  /> 
+                </div>
+              }
+            />
+          </Routes>
         </div>
       </div>
-      <ExpenseCard expenses={expenses} incomes={incomes}  />
-    </div>
+    </Router>
   );
 };
 
