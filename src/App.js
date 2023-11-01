@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import IncomeExpense from './components/IncomeExpense';
 import ExpenseCard from './components/ExpenseCard';
@@ -38,8 +38,21 @@ const App = () => {
       <div className="App">
         <Navbar />
         <div className="container">
-          <Routes> {/* Use Routes instead of Switch */}
-            <Route path="/hello" element={<GraphsCard />} />
+          <Routes> 
+            <Route path="/" element={
+                <div>
+                  <div className="nav-links">
+                    <li>
+                      <Link to="/graphs">Graphs Page</Link>
+                    </li>
+                    <li>
+                      <Link to="/budget">Budget Page</Link>
+                    </li>
+                  </div>
+                </div>
+              }
+            />
+            <Route path="/graphs" element={<GraphsCard />} />
             <Route
               path="/budget"
               element={ /* Render the default component */
