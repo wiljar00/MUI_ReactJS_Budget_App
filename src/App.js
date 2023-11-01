@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import IncomeExpense from './components/IncomeExpense';
 import ExpenseCard from './components/ExpenseCard';
@@ -7,6 +7,7 @@ import ExpenseForm from './components/ExpenseForm';
 import IncomeForm from './components/IncomeForm';
 import Navbar from './components/Navbar';
 import GraphsCard from './components/GraphsCard';
+import Homepage from './components/Homepage';
 
 const App = () => {
   // Dummy data for expenses
@@ -39,19 +40,7 @@ const App = () => {
         <Navbar />
         <div className="container">
           <Routes> 
-            <Route path="/" element={
-                <div>
-                  <div className="nav-links">
-                    <li>
-                      <Link to="/graphs">Graphs Page</Link>
-                    </li>
-                    <li>
-                      <Link to="/budget">Budget Page</Link>
-                    </li>
-                  </div>
-                </div>
-              }
-            />
+            <Route path="/" element={<Homepage />} />
             <Route path="/graphs" element={<GraphsCard />} />
             <Route
               path="/budget"

@@ -158,3 +158,43 @@ body {
     transform: translateY(0);
   }
 }
+
+
+/* Homepage.css */
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.app-description {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.homepage-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.homepage-button:hover {
+  background-color: #45a049;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
