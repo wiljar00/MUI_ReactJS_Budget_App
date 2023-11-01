@@ -6,7 +6,8 @@ import ExpenseCard from './components/ExpenseCard';
 import ExpenseForm from './components/ExpenseForm';
 import IncomeForm from './components/IncomeForm';
 import Navbar from './components/Navbar';
-import GraphsCard from './components/GraphsCard';
+// import GraphsCard from './components/GraphsCard';
+import GraphComponent from './components/GraphComponent';
 import Homepage from './components/Homepage';
 
 const App = () => {
@@ -41,7 +42,15 @@ const App = () => {
         <div className="container">
           <Routes> 
             <Route path="/" element={<Homepage />} />
-            <Route path="/graphs" element={<GraphsCard />} />
+            <Route 
+              path="/graphs"
+              element={
+                <div>
+                  {/* Pass expenses and incomes to the GraphComponent */}
+                  <GraphComponent data={[...expenses, ...incomes]} />
+                </div>
+              }
+            />
             <Route
               path="/budget"
               element={ /* Render the default component */
