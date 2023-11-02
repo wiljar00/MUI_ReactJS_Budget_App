@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import IncomeExpense from './components/IncomeExpense';
@@ -12,29 +12,40 @@ import BubbleChartComponent from './components/BubbleChartComponent';
 import Homepage from './components/Homepage';
 
 const App = () => {
-  // Dummy data for expenses
-  const [expenses, setExpenses] = useState([
+  const initialExpenses = JSON.parse(localStorage.getItem('expenses')) || [
     { id: 1, title: 'Groceries', amount: 50.0 },
     { id: 2, title: 'Gas', amount: 30.0 },
     { id: 3, title: 'Dinner', amount: 40.0 },
-    // Add more expense objects as needed
-  ]);
+  ];
+
+  const [expenses, setExpenses] = useState(initialExpenses);
 
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
-      return [...prevExpenses, expense];
+      const updatedExpenses = [...prevExpenses, expense];
+      localStorage.setItem('expenses', JSON.stringify(updatedExpenses));
+      return updatedExpenses;
     });
   };
 
-  const [incomes, setIncomes] = useState([
+    const initialIncomes = JSON.parse(localStorage.getItem('incomes')) || [
     { id: 1, title: 'Paycheck', amount: 150.0 },
-  ]);
+  ];
+
+  const [incomes, setIncomes] = useState(initialIncomes);
 
   const addIncomeHandler = (income) => {
     setIncomes((prevIncomes) => {
-      return [...prevIncomes, income];
+      const updatedIncomes = [...prevIncomes, income];
+      localStorage.setItem('incomes', JSON.stringify(updatedIncomes));
+      return updatedIncomes;
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+    localStorage.setItem('incomes', JSON.stringify(incomes));
+  }, [expenses, incomes]);
 
   return (
     <Router>
@@ -68,7 +79,12 @@ const App = () => {
                       <h3>Expenses: </h3>
                     </div>
                   </div>
-                  <ExpenseCard expenses={expenses} incomes={incomes}  /> 
+                  <ExpenseCard 
+                    expenses={expenses}
+                    incomes={incomes}
+                    setExpenses={setExpenses}
+                    setIncomes={setIncomes} 
+                  /> 
                 </div>
               }
             />

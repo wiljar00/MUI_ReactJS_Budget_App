@@ -7,10 +7,10 @@ const Navbar = () => {
       <Link to="/" className="logo">Budget App</Link> 
       <ul className="nav-links">
         <li>
-          <Link to="/graphs">Graphs</Link>
+          <Link to="/budget">Budget</Link>
         </li>
         <li>
-          <Link to="/budget">Budget</Link>
+          <Link to="/graphs">Graphs</Link>
         </li>
       </ul>
     </nav>

@@ -111,6 +111,16 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
 }
 
+.remove-button {
+  padding: 10px;
+  background-color: #f60101;
+  color: #050505;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
+}
+
 .expense-entry {
   background-color: lightcoral;
   padding: 20px;
