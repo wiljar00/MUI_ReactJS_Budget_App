@@ -8,6 +8,7 @@ import IncomeForm from './components/IncomeForm';
 import Navbar from './components/Navbar';
 // import GraphsCard from './components/GraphsCard';
 import GraphComponent from './components/GraphComponent';
+import BubbleChartComponent from './components/BubbleChartComponent';
 import Homepage from './components/Homepage';
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
                 <div>
                   {/* Pass expenses and incomes to the GraphComponent */}
                   <GraphComponent data={[...expenses, ...incomes]} />
+                  <BubbleChartComponent data={[...expenses, ...incomes]} />
                 </div>
               }
             />
