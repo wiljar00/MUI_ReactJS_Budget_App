@@ -57,7 +57,7 @@ const App = () => {
             <Route 
               path="/graphs"
               element={
-                <div>
+                <div className='graph-page'>
                   {/* Pass expenses and incomes to the GraphComponent */}
                   <GraphComponent data={[...expenses, ...incomes]} />
                   <BubbleChartComponent data={[...expenses, ...incomes]} />
